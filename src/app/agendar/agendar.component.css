@@ -1,0 +1,8 @@
+.img{
+    background-image: url('../../assets/cita.svg');
+    background-repeat: no-repeat;
+    background-size: 62%;
+    height: 100vh;
+    background-position:bottom;
+}
+

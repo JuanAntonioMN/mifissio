@@ -1,0 +1,7 @@
+.activebutton {
+    font-weight: 600;
+    color: #0A59B2;
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 10px;
+}

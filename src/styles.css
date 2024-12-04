@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importa Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define las fuentes fuera de cualquier selector */
+@layer base {
+    @font-face {
+        font-family: 'Instrument Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url("./assets/fonts/InstrumentSans.ttf") format('truetype');
+    }
+    @font-face {
+        font-family: "Italiana";
+        font-style: normal;
+        font-weight:1000;
+        src: url("./assets/fonts/Italianno-Regular.ttf") format('truetype');
+    }
+    @font-face {
+        font-family: "Roboto";
+        font-style: normal;
+        font-weight:300;
+        src: url("./assets/fonts/Mulish-VariableFont_wght.ttf") format('truetype');
+    }
+}
+

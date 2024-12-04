@@ -1,0 +1,130 @@
+<div class="flex flex-col w-full h-screen box-border">
+    <div class="flex box-border w-full">
+        <h1 class="text-[1.8rem] text-[#A0CAFA] mx-5">mifissio</h1>
+    </div>
+
+    <div class="flex gap-5 w-full">
+        <div class="flex flex-col gap-5  w-[70%] h-screen  shadow rounded box-border p-5">
+            <h2 class="text-[#4987CE] font-bold text-[3rem]">AGENDA TU CITA CON NOSOTROS</h2>
+            <p class="text-[#85B9F4] text-[1.2rem]">Cuidamos de ti y de los tuyos, con amor y profesionalismo.
+                Atención médica de calidad para toda la familia.</p>
+               
+            <div class="img w-full">
+
+            </div>
+        </div>
+
+        <div class="flex bg-[#6DB0FC] w-full h-screen box-border justify-center  ">
+            <div class="w-full rounded-[.5rem] shadow  bg-white m-5 box-border flex flex-col gap-5 justify-center items-center">
+        
+                <div class="text-[#6DB0FC] text-[1.2rem] font-bold flex justify-center gap-10 my-10 ">
+                    <article class="bg-[#6DB0FC] text-white rounded-full w-[2rem] h-[2rem] flex justify-center items-center">1</article>Contacto >
+                    <article class="bg-[#DBEFFA] text-[#6DB0FC] rounded-full w-[2rem] h-[2rem] flex justify-center items-center">2</article>Dia y hora >
+                    <article class="bg-[#DBEFFA] text-[#36DB0FC] rounded-full w-[2rem] h-[2rem] flex justify-center items-center">3</article>Confirmar
+                </div>
+                 
+                    <div *ngIf="step === 1" class="flex flex-col w-full h-screen  ">
+                       
+                        <form (ngSubmit)="nextStep()" class="flex flex-col w-full gap-2  items-center ">
+                           
+                            <label class="text-[#6DB0FC] text-[1.2rem] font-medium w-[80%]">Nombre <br>
+                          <input type="text" [(ngModel)]="contactInfo.name" name="name" required  placeholder="Ingrese su nombre" class="text-[#A0CAFA] text-[1rem] rounded-[0.2rem] w-full h-[3rem] border-[#DBEFFA]  border-[0.1rem] outline-none focus:outline-none  placeholder-[#A0CAFA] p-2"/>
+                        </label>
+                          <label class="text-[#6DB0FC] text-[1.2rem] font-medium w-[80%]">Teléfono <br>
+                          <input type="tel" [(ngModel)]="contactInfo.phone" name="phone" required placeholder="Ingrese su numero telefónico" class="text-[#A0CAFA] text-[1rem] rounded-[0.2rem] w-full h-[3rem] border-[#DBEFFA]  border-[0.1rem] outline-none focus:outline-none  placeholder-[#A0CAFA] p-2"/>
+                        </label>
+                          <label class="text-[#6DB0FC] text-[1.2rem] font-medium w-[80%]">Correo <br>
+                          <input type="email" [(ngModel)]="contactInfo.email" name="email" required placeholder="Ingrese su correo electrónico" class="text-[#A0CAFA] text-[1rem] rounded-[0.2rem] w-full h-[3rem] border-[#DBEFFA]  border-[0.1rem] outline-none focus:outline-none  placeholder-[#A0CAFA] p-2"/>
+                        </label>
+                        <div class="w-full flex justify-end px-20">
+                            <button type="submit" class="bg-white text-[#4285F4] border-[.1rem] border-[#4285F4] h-[4rem] w-[30%] rounded-[.6rem] my-5 text-[1.1rem] font-medium shadow shadow-[#DBEFFA] ">CONTINUAR</button>
+                        </div>
+
+                        </form>
+                    </div>
+
+
+                    <div *ngIf="step === 2">
+                        
+                        <form (ngSubmit)="nextStep()">
+                            <div class="w-full bg-white p-4 rounded-lg shadow-md shadow-[#A0CAFA]">
+                                <!-- Encabezado del calendario -->
+                                <div class="flex items-center justify-between mb-4">
+                                  <!-- Botón anterior -->
+                                 
+                                  
+                                  <!-- Mes y Año -->
+                                  <h2 class="text-[1rem] font-normal text-[#6DB0FC]">
+                                    {{ getMonthName() }} {{ getYear() }}
+                                  </h2>
+                                  
+                                  <!-- Botón siguiente -->
+                                  <button (click)="nextMonth()" class="text-2xl text-[#4285F4]">
+                                    &gt;
+                                  </button>
+                                </div>
+                                
+                                <!-- Días de la semana -->
+                                <div class="grid grid-cols-7 gap-1 text-center   text-gray-600 mb-2">
+                                  <div *ngFor="let day of daysOfWeek" class="p-2 text-[.8rem]">{{ day }}</div>
+                                </div>
+                              
+                                <!-- Días del mes -->
+                                <div class="grid grid-cols-7 gap-1 text-center">
+                                  <div *ngFor="let day of daysInMonth" 
+                                       class="flex justify-center items-center p-2 rounded-lg cursor-pointer hover:bg-[#A0CAFA] transition-all ">
+                                    <span *ngIf="day !== 0" class="text-black text-[.9rem]">{{ day }}</span>
+                                  </div>
+                                </div>
+
+                                <div class="w-full flex justify-between font-medium">
+                                    Time:
+                                    <input type="time" class="bg-[#6DB0FC] rounded text-white placeholder-white font-semibold">
+                                </div>
+                              
+                              </div>
+
+                              <div class="flex w-full justify-between my-5">
+                              
+                                <button type="submit" class="bg-[#4285F4] text-white border-[.1rem] border-[#032F54] h-[3.5rem] w-[40%] rounded-[.6rem] my-5 text-[1.1rem] font-medium shadow shadow-[#DBEFFA] " (click)="previousStep()" >VOLVER</button>
+                                <button type="submit" class="bg-white text-[#4285F4] border-[.1rem] border-[#4285F4] h-[3.5rem] w-[40%] rounded-[.6rem] my-5 text-[1.1rem] font-medium shadow shadow-[#DBEFFA] ">CONTINUAR</button>
+
+                               
+                              </div>
+                              
+                      
+                         
+                        </form>
+                      </div>
+                    
+
+                      <div *ngIf="step === 3">
+                        <h2>Confirmar</h2>
+                        <p><strong>Nombre del paciente:</strong> {{ contactInfo.name }}</p>
+                        <p><strong>Número telefónico:</strong> {{ contactInfo.phone }}</p>
+                        <p><strong>Correo electrónico:</strong> {{ contactInfo.email }}</p>
+                        <p><strong>Fecha de la cita:</strong> {{ appointment.date }}</p>
+                        <p><strong>Hora de la cita:</strong> {{ appointment.time }}</p>
+                      
+                        <div class="flex w-full justify-between my-5">
+                              
+                            <button type="submit" class="bg-[#4285F4] text-white border-[.1rem] border-[#032F54] h-[3.5rem] w-[40%] rounded-[.6rem] my-5 text-[1.1rem] font-medium shadow shadow-[#DBEFFA] " (click)="previousStep()" >VOLVER</button>
+                            <button type="submit" class="bg-white text-[#4285F4] border-[.1rem] border-[#4285F4] h-[3.5rem] w-[40%] rounded-[.6rem] my-5 text-[1.1rem] font-medium shadow shadow-[#DBEFFA] ">AGENDAR CITA</button>
+
+                           
+                          </div>
+                      </div>
+
+
+                
+            </div>
+        </div>
+    </div>
+    
+</div> 
+
+<!--
+ 
+
+ 
+-->

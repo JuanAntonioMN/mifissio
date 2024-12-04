@@ -1,0 +1,89 @@
+.imagen{
+    background-image: url('../../assets/fondo-principal.svg');
+    
+}
+
+.terapia{
+    background-image: url('../../assets/terapia.svg');
+  
+}
+
+.rehabiltacion{
+    background-image: url('../../assets/rehabilitacion.svg');
+    z-index: 1;
+    top:3.1rem;
+}
+
+
+
+.masajes{
+    background-image: url('../../assets/masajes.svg');
+    z-index: 1;
+    top:2rem;
+}
+
+.borde{
+    border-radius: 10rem 0rem 0rem 0rem;
+  
+}
+
+.doctora{
+    background-image: url('../../assets/doctora.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.cedula{
+    background-image: url('../../assets/cedula.svg');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    position: relative;
+    top: -65rem;
+    left: 40rem;
+
+}
+
+.horario{
+    background-image: url('../../assets/agenda.png');
+    
+}
+
+
+.mapa{
+    background-image: url('../../assets/mapa.png');
+    background-size: 50%;
+    height: 100vh;
+}
+
+.mapa2{
+    background-image: url('../../assets/mapa.png');
+    height: 50vh;
+    background-size: 50vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 90%;
+}
+
+.icon1{
+    background-image: url('../../assets/icon1.png');
+    background-size: 100px;
+}
+
+.icon2{
+    background-image: url('../../assets/icon2.png');
+    background-size: 100px;
+}
+
+.icon3{
+    background-image: url('../../assets/icon3.png');
+    background-size: 100px;
+}
+.circulo{
+    background-image: url('../../assets/circulo.png');
+    height: 8vh;
+}
+
+.box{
+    box-shadow: #0A59B2 0px 1px 5px;
+}

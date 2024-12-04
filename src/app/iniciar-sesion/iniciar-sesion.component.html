@@ -1,0 +1,52 @@
+<div class="flex sm:flex-row flex-col w-full h-screen gap-2">
+    <!-- Sección Izquierda -->
+    <div class="bg-white w-full sm:w-1/3 flex flex-col justify-start items-start  sm:gap-12 gap-4 ">
+      <a class="text-[#A0CAFA] text-[3.5rem] font-['Italiana'] px-4" routerLink="/">mifissio</a> 
+      <h1 class="text-[#1973DA] font-[500] text-[2rem] text-left px-5">INFORMACIÓN</h1>
+      <p class="text-[1rem] text-[#0A59B2] text-justify px-5">
+        Si aun no cuentas con correo y contraseña, le recomendamos agendar una cita para poder tener el contenido a su disposición.
+      </p>
+
+      <button class="bg-[#0A59B2] text-white w-1/2 h-[3rem] m-auto text-[1.1rem] font-[400] " routerLink="/agendar"><i class="fa-solid fa-calendar-days"></i> AGENDAR CITA</button>
+
+    </div>
+    
+    <!-- Sección Derecha -->
+    <div class="sm:bg-[#F9F9F9] w-full sm:w-2/3 flex flex-col sm:justify-start items-center gap-12 bg-[#0A59B2] h-screen sm:shadow sm:shadow-[#A0CAFA]">
+  
+      <div class="sm:text-[#1973DA] font-[500] text-[1.5rem] sm:text-[2rem] text-white">
+        INICIAR SESIÓN
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4 sm:gap-10 items-center w-full">
+        <label for="email" class="text-white sm:text-[#0A59B2] text-[1.3rem] font-normal w-3/4 sm:w-2/4 flex flex-col gap-2">
+            <span class="text-left">Correo electrónico</span>
+            <input 
+            [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          formControlName="email"
+          type="email" 
+          class="shadow shadow-[#A0CAFA] text-[#1973DA] text-[1.1rem] sm:text-base font-normal px-8 py-3 sm:px-4 sm:py-3 placeholder-[#0A59B2] focus:outline-none  focus:ring-[#0A59B2] focus:border-[#0A59B2]"
+          placeholder="Ingrese su correo electrónico">
+            </label>
+
+            <label for="password" class="text-white sm:text-[#0A59B2] text-[1.3rem] font-normal w-3/4 sm:w-2/4 flex flex-col gap-2">
+                <span class="text-left">contraseña</span>
+                <input 
+                [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+      
+                formControlName="password"
+              type="password" 
+              class="shadow shadow-[#A0CAFA] text-[#1973DA] text-[1.1rem] sm:text-base font-normal px-8 py-3 sm:px-4 sm:py-3 placeholder-[#0A59B2] focus:outline-none  focus:ring-[#0A59B2] focus:border-[#0A59B2]"
+              placeholder="Escribe tu contraseña aquí">
+                </label>
+
+       
+        <button [disabled]="loginForm.invalid" class="bg-[#032F54] text-white shadow shadow-[#032F54] hover:bg-white hover:text-[#1973DA] sm:hover:bg-[#1973DA] text-[1.5rem] sm:text-[1.2rem] sm:hover:text-white font-medium w-3/4 sm:w-2/4 h-[4rem] sm:h-[3.5rem] rounded-[.2rem] sm:bg-white sm:text-[#1973DA] sm:shadow sm:shadow-[#A0CAFA] sm:hover:shadow-none">
+          INICIAR SESIÓN
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+  
